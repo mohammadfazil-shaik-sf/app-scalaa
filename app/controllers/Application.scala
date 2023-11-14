@@ -14,12 +14,6 @@ import play.api.db._
 object Application extends Controller {
 
   def index = Action {
-    Ok(views.html.index(null))
-  }
-}
-object Application extends Controller {
-
-  def index = Action {
     RelativisticModel.select()
     val energy = scala.util.Properties.envOrElse("ENERGY", "12 GeV")
     val m = Amount.valueOf("12 GeV").to(KILOGRAM)
